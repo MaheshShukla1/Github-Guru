@@ -4,98 +4,123 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO Meta -->
-  <meta name="description" content="Learn Git and GitHub from scratch with real-world examples, commands, and projects. A complete Git mastery guide for developers, students, and professionals.">
-  <meta name="keywords" content="git tutorial, learn git, git and github course, git commands, github beginner guide, git rebase, git merge, open source contribution, devops git basics">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Master Git and GitHub from scratch with hands-on tutorials, real-world examples, commands, and projects. Perfect for beginners, developers, students, and professionals. Learn branching, merging, pull requests, and advanced techniques.">
+  <meta name="keywords" content="git tutorial, learn git, git github course, git commands, github beginner guide, git rebase, git merge, open source contribution, devops git basics, version control, git branching, git pull requests">
   <meta name="author" content="Mahesh Shukla">
+  <meta name="robots" content="index, follow">
   
   <!-- OG / Social Meta -->
-  <meta property="og:title" content="Git Guru — Learn Git & GitHub from Scratch">
-  <meta property="og:description" content="Master Git and GitHub hands-on with this complete practical guide. Perfect for developers, students, and professionals.">
+  <meta property="og:title" content="Git Guru: Master Git & GitHub from Scratch">
+  <meta property="og:description" content="Hands-on guide to Git and GitHub with practical examples, commands, and projects. Ideal for developers and beginners.">
   <meta property="og:image" content="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png">
-  <meta property="og:url" content="https://maheshshukla1.github.io/Github-Guru/">
+  <meta property="og:url" content="https://maheshshukla1.github.io/GitHub-Guru/">
+  <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Git Guru: Master Git & GitHub from Scratch">
+  <meta name="twitter:description" content="Hands-on guide to Git and GitHub with practical examples, commands, and projects. Ideal for developers and beginners.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png">
 
-  <title>Git Guru — Master Git & GitHub</title>
+  <title>Git Guru: Master Git & GitHub from Scratch</title>
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <!-- Styles -->
   <style>
     * {margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif;}
-    body {background:#f9f9f9; color:#111; line-height:1.6;}
-    a {color:#0a66c2; text-decoration:none;}
-    a:hover {text-decoration:underline;}
-    .container {max-width:900px; margin:40px auto; padding:0 20px;}
+    body {background:#f9f9f9; color:#222; line-height:1.7; font-size:16px;}
+    a {color:#007bff; text-decoration:none; transition: color 0.3s;}
+    a:hover {color:#0056b3; text-decoration:underline;}
+    .container {max-width:1100px; margin:50px auto; padding:0 20px;}
     .center {text-align:center;}
-    h1 {font-size:2.5rem; margin-bottom:0.5rem; color:#f05033;}
-    h2 {margin-top:2rem; margin-bottom:1rem; color:#333;}
-    p {margin-bottom:1rem;}
-    img {max-width:100%; border-radius:8px;}
-    .badge {display:inline-block; margin:5px 5px 15px 0;}
-    table {width:100%; border-collapse:collapse; margin:2rem 0;}
-    th, td {border:1px solid #ddd; padding:12px; text-align:left;}
-    th {background:#f05033; color:white;}
-    tr:nth-child(even) {background:#f9f9f9;}
-    .btn {display:inline-block; margin:10px 5px; padding:10px 20px; background:#0a66c2; color:white; border-radius:6px; font-weight:600;}
-    .btn:hover {background:#084d8a;}
-    blockquote {border-left:4px solid #f05033; padding-left:1rem; color:#555; margin:1rem 0;}
-    hr {border:none; border-top:2px solid #eee; margin:2rem 0;}
+    h1 {font-size:3rem; margin-bottom:1rem; color:#f05033; font-weight:700;}
+    h2 {font-size:2rem; margin:3rem 0 1.5rem; color:#333; font-weight:600; position:relative;}
+    h2::after {content:''; display:block; width:50px; height:3px; background:#f05033; margin:0.5rem auto 0;}
+    p {margin-bottom:1.5rem; font-weight:300;}
+    img {max-width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+    .badge {display:inline-block; margin:8px 8px 20px 0;}
+    table {width:100%; border-collapse:collapse; margin:2.5rem 0; box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+    th, td {border:1px solid #e0e0e0; padding:15px; text-align:left;}
+    th {background:#f05033; color:white; font-weight:600;}
+    tr:nth-child(even) {background:#fdfdfd;}
+    .btn {display:inline-block; margin:12px 8px; padding:12px 28px; background:#007bff; color:white; border-radius:8px; font-weight:600; transition: background 0.3s, transform 0.2s;}
+    .btn:hover {background:#0056b3; transform:translateY(-2px);}
+    blockquote {border-left:5px solid #f05033; padding-left:1.5rem; color:#555; margin:1.5rem 0; font-style:italic; background:#fff; border-radius:4px; box-shadow:0 2px 4px rgba(0,0,0,0.05);}
+    hr {border:none; border-top:1px solid #eee; margin:3rem 0;}
+    ul, ol {margin:1rem 0 1.5rem 2rem; font-weight:300;}
+    li {margin-bottom:0.75rem;}
+    .hero {background:#fff; padding:40px 20px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); margin-bottom:40px;}
+    .social-share {margin:2rem 0;}
+    .social-share a {margin:0 10px; font-size:1.5rem; color:#555;}
+    .social-share a:hover {color:#f05033;}
+    .feature-icon {font-size:1.2rem; color:#f05033; margin-right:0.5rem;}
+    .learning-path tr:hover {background:#f8f9fa;}
   </style>
 </head>
 <body>
 
-<div class="container center">
-  <img src="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png" alt="GitHub Guru Banner">
+<div class="container center hero">
+  <img src="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png" alt="Git Guru Banner - Master Git and GitHub with Hands-On Tutorials">
   
-  <h1>🚀 Git Guru — Master Git & GitHub from Scratch 🧠💻</h1>
+  <h1>🚀 Git Guru: Master Git & GitHub from Scratch 🧠💻</h1>
   
-  <p><b>Hands-On Git & GitHub Learning Repository</b><br>
-  <i>Learn version control visually, practically, and step-by-step — from basics to pro level!</i></p>
+  <p><strong>Hands-On Git & GitHub Learning Repository</strong><br>
+  <em>Learn version control visually, practically, and step-by-step — from basics to pro level!</em></p>
   
-  <a class="btn" href="https://maheshshukla1.github.io/Github-Guru/">View Live Course</a>
-  <a class="btn" href="https://github.com/MaheshShukla1/Github-Guru/stargazers">⭐ Star</a>
-  <a class="btn" href="https://github.com/MaheshShukla1/Github-Guru/network/members">🍴 Fork</a>
+  <a class="btn" href="https://maheshshukla1.github.io/GitHub-Guru/">View Live Course</a>
+  <a class="btn" href="https://github.com/MaheshShukla1/GitHub-Guru/stargazers"><i class="fas fa-star"></i> Star</a>
+  <a class="btn" href="https://github.com/MaheshShukla1/GitHub-Guru/network/members"><i class="fas fa-code-branch"></i> Fork</a>
 
-  <div>
-    <img class="badge" src="https://img.shields.io/github/license/MaheshShukla1/GitHub-Guru">
-    <img class="badge" src="https://img.shields.io/github/stars/MaheshShukla1/GitHub-Guru?style=social">
-    <img class="badge" src="https://img.shields.io/github/forks/MaheshShukla1/GitHub-Guru?style=social">
-    <img class="badge" src="https://img.shields.io/badge/Git-Learning-red?logo=git">
-    <img class="badge" src="https://img.shields.io/badge/GitHub-Projects-blue?logo=github">
-    <img class="badge" src="https://img.shields.io/badge/Made%20with-%E2%9D%A4-red">
+  <div class="badges">
+    <img class="badge" src="https://img.shields.io/github/license/MaheshShukla1/GitHub-Guru" alt="License Badge">
+    <img class="badge" src="https://img.shields.io/github/stars/MaheshShukla1/GitHub-Guru?style=social" alt="Stars Badge">
+    <img class="badge" src="https://img.shields.io/github/forks/MaheshShukla1/GitHub-Guru?style=social" alt="Forks Badge">
+    <img class="badge" src="https://img.shields.io/badge/Git-Learning-red?logo=git" alt="Git Learning Badge">
+    <img class="badge" src="https://img.shields.io/badge/GitHub-Projects-blue?logo=github" alt="GitHub Projects Badge">
+    <img class="badge" src="https://img.shields.io/badge/Made%20with-%E2%9D%A4-red" alt="Made with Love Badge">
+  </div>
+
+  <div class="social-share">
+    <p>Share this with your network:</p>
+    <a href="https://twitter.com/intent/tweet?url=https://maheshshukla1.github.io/GitHub-Guru/&text=Master Git & GitHub from scratch with this hands-on guide! 🚀" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://maheshshukla1.github.io/GitHub-Guru/&title=Git Guru: Master Git & GitHub" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://maheshshukla1.github.io/GitHub-Guru/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://reddit.com/submit?url=https://maheshshukla1.github.io/GitHub-Guru/&title=Git Guru: Master Git & GitHub from Scratch" target="_blank"><i class="fab fa-reddit"></i></a>
   </div>
 </div>
 
 <div class="container">
-  <p><b>GitHub-Guru</b> is your <b>complete hands-on guide</b> to mastering <b>Git & GitHub</b> — from your very first commit to advanced commands like <code>rebase</code>, <code>stash</code>, and <code>reset</code>. Built with ❤️ for <b>students, developers, and professionals</b> who want to <i>learn by doing</i>.</p>
+  <p><strong>Git Guru</strong> is your <strong>complete hands-on guide</strong> to mastering <strong>Git & GitHub</strong> — from your very first commit to advanced commands like <code>rebase</code>, <code>stash</code>, and <code>reset</code>. Built with ❤️ for <strong>students, developers, and professionals</strong> who want to <em>learn by doing</em>.</p>
   
   <blockquote>🌟 Learn Git & GitHub step-by-step with real-world examples, command explanations, and fun practice exercises — all in one place!</blockquote>
   
   <hr>
 
-  <h2>🔍 Why GitHub-Guru?</h2>
+  <h2>🔍 Why Choose Git Guru?</h2>
   <ul>
-    <li>✅ Practical & Real-World Oriented</li>
-    <li>✅ Beginner-Friendly + Advanced Concepts</li>
-    <li>✅ SEO-Optimized Markdown Lessons</li>
-    <li>✅ Command + Theory + Example Format</li>
-    <li>✅ Perfect for Self-Learning or Teaching Others</li>
-    <li>✅ Ideal for Portfolio Projects or Resume Boost</li>
+    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Practical & Real-World Oriented</li>
+    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Beginner-Friendly + Advanced Concepts</li>
+    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> SEO-Optimized Markdown Lessons</li>
+    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Command + Theory + Example Format</li>
+    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Perfect for Self-Learning or Teaching Others</li>
+    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Ideal for Portfolio Projects or Resume Boost</li>
   </ul>
   
   <hr>
   
   <h2>🧩 What You’ll Learn</h2>
   <ul>
-    <li>🧭 What is Git & How Version Control Works</li>
-    <li>⚙️ Basic Git Commands (<code>init</code>, <code>add</code>, <code>commit</code>, <code>status</code>, <code>log</code>)</li>
-    <li>🌿 Branching, Merging, and Resolving Conflicts</li>
-    <li>☁️ Working with Remote Repositories & GitHub</li>
-    <li>🔄 Pull Requests, Collaboration, and Open Source Flow</li>
-    <li>🧰 Advanced Git Techniques (<code>rebase</code>, <code>stash</code>, <code>reset</code>, <code>revert</code>)</li>
-    <li>💡 Pro Tips, Best Practices & Common Mistakes to Avoid</li>
+    <li><span class="feature-icon"><i class="fas fa-compass"></i></span> What is Git & How Version Control Works</li>
+    <li><span class="feature-icon"><i class="fas fa-tools"></i></span> Basic Git Commands (<code>init</code>, <code>add</code>, <code>commit</code>, <code>status</code>, <code>log</code>)</li>
+    <li><span class="feature-icon"><i class="fas fa-code-branch"></i></span> Branching, Merging, and Resolving Conflicts</li>
+    <li><span class="feature-icon"><i class="fas fa-cloud"></i></span> Working with Remote Repositories & GitHub</li>
+    <li><span class="feature-icon"><i class="fas fa-sync"></i></span> Pull Requests, Collaboration, and Open Source Flow</li>
+    <li><span class="feature-icon"><i class="fas fa-toolbox"></i></span> Advanced Git Techniques (<code>rebase</code>, <code>stash</code>, <code>reset</code>, <code>revert</code>)</li>
+    <li><span class="feature-icon"><i class="fas fa-lightbulb"></i></span> Pro Tips, Best Practices & Common Mistakes to Avoid</li>
   </ul>
   
   <hr>
@@ -115,19 +140,18 @@
   <hr>
   
   <h2>⚙️ Setup Instructions</h2>
-  <pre>
-# Clone this repo
+  <pre><code># Clone this repo
 git clone https://github.com/MaheshShukla1/GitHub-Guru.git
 
 # Move into folder
 cd GitHub-Guru
-  </pre>
+</code></pre>
   <p>Open in VS Code or any editor and start exploring! ✨</p>
   
   <hr>
   
   <h2>🗂️ Learning Path</h2>
-  <table>
+  <table class="learning-path">
     <tr>
       <th>Level</th>
       <th>Topic</th>
@@ -161,7 +185,7 @@ cd GitHub-Guru
     <tr>
       <td>06</td>
       <td>🧰 Advanced Git</td>
-      <td>Coming Soon...</td>
+      <td><a href="./advanced-git.md">Explore →</a></td>
     </tr>
   </table>
 
@@ -184,7 +208,7 @@ cd GitHub-Guru
   <hr>
 
   <h2>🌟 Star, Fork, & Share</h2>
-  <p>If you found this helpful — ⭐ <b>Star it</b>, 🍴 <b>Fork it</b>, and 💬 <b>Share it</b> with your dev friends!</p>
+  <p>If you found this helpful — ⭐ <strong>Star it</strong>, 🍴 <strong>Fork it</strong>, and 💬 <strong>Share it</strong> with your dev friends!</p>
 </div>
 
 </body>
