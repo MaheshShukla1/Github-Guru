@@ -1,4 +1,13 @@
-# 🚀 GitHub-Guru — Learn Git & GitHub from Scratch to Advanced 🧠💻
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png" alt="GitHub-Guru Banner" width="100%">
+</p>
+
+<h1 align="center">🚀 GitHub-Guru — Learn Git & GitHub from Scratch to Advanced 🧠💻</h1>
+
+<p align="center">
+  <b>Hands-on Git & GitHub Learning Repository</b><br>
+  <i>Learn version control like a pro — commit by commit.</i>
+</p>
 
 ![GitHub license](https://img.shields.io/github/license/MaheshShukla1/GitHub-Guru)
 ![GitHub stars](https://img.shields.io/github/stars/MaheshShukla1/GitHub-Guru?style=social)
