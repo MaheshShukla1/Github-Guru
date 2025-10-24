@@ -42,7 +42,7 @@ Open in VS Code or any editor and start exploring! ✨
 
 |Section|Topic|Link|
 |---|---|---|
-|01|🧭 Introduction|[Go →](0https://github.com/MaheshShukla1/Github-Guru/blob/main/what-is-git.md)|
+|01|🧭 Introduction|[Go →](https://github.com/MaheshShukla1/Github-Guru/blob/main/what-is-git.md)|
 |02|🪄 Git Basics|[Go →](02-Git-Basics/)|
 |03|🌿 Branching & Merging|[Go →](03-Branching-Merging/)|
 |04|☁️ Remote Repos (GitHub)|[Go →](04-Remote-Repos/)|
