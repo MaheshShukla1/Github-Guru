@@ -2,23 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com; img-src 'self' https://raw.githubusercontent.com https://img.shields.io; connect-src 'self';">
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Master Git and GitHub from scratch with hands-on tutorials, real-world examples, commands, and projects. Perfect for beginners, developers, students, and professionals. Learn branching, merging, pull requests, and advanced techniques.">
-  <meta name="keywords" content="git tutorial, learn git, git github course, git commands, github beginner guide, git rebase, git merge, open source contribution, devops git basics, version control, git branching, git pull requests">
+  <meta name="description" content="Master Git and GitHub from scratch with hands-on tutorials, real-world examples, commands, and interactive code demos. Perfect for beginners, developers, students, and professionals.">
+  <meta name="keywords" content="git tutorial, learn git, git github course, git commands, github beginner guide, git rebase, git merge, open source contribution, devops git basics, version control, git branching, git pull requests, interactive git demos">
   <meta name="author" content="Mahesh Shukla">
   <meta name="robots" content="index, follow">
   
   <!-- OG / Social Meta -->
   <meta property="og:title" content="Git Guru: Master Git & GitHub from Scratch">
-  <meta property="og:description" content="Hands-on guide to Git and GitHub with practical examples, commands, and projects. Ideal for developers and beginners.">
+  <meta property="og:description" content="Hands-on guide to Git and GitHub with practical examples, commands, projects, and interactive demos. Ideal for developers and beginners.">
   <meta property="og:image" content="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png">
   <meta property="og:url" content="https://maheshshukla1.github.io/GitHub-Guru/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Git Guru: Master Git & GitHub from Scratch">
-  <meta name="twitter:description" content="Hands-on guide to Git and GitHub with practical examples, commands, and projects. Ideal for developers and beginners.">
+  <meta name="twitter:description" content="Hands-on guide to Git and GitHub with practical examples, commands, projects, and interactive demos.">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png">
 
   <title>Git Guru: Master Git & GitHub from Scratch</title>
@@ -29,58 +32,134 @@
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
+  <!-- CodeMirror CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.css" integrity="sha512-LP3uC4yXXgH3y3yU0Z4yJ4S0uD3h7C3K6v66O1v2jYh8iG0Jomq1NOhXs4ug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.js" integrity="sha512-VmI26uDqt1vm6IkosL4tW7O1ar3KbouZ2eH3r95Kx5qO5EajG2p3QaKvaTBlWTwosnyE2nL7jPUtCvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/shell/shell.min.js" integrity="sha512-8z6wcrnyUoQbP5G2vB2RtZjBB7F6bwJ0QFl3eCHC3D63rwXyVRfYIWJAjH2rY2gD24b3Vqw4H3xm/x0QNeKNeSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <!-- Fallback CDN for CodeMirror -->
+  <script>
+    window.addEventListener('load', function() {
+      if (!window.CodeMirror) {
+        console.warn('CodeMirror failed to load from primary CDN. Attempting fallback.');
+        var cssLink = document.createElement('link');
+        cssLink.rel = 'stylesheet';
+        cssLink.href = 'https://unpkg.com/codemirror@5.65.15/lib/codemirror.min.css';
+        document.head.appendChild(cssLink);
+        
+        var script = document.createElement('script');
+        script.src = 'https://unpkg.com/codemirror@5.65.15/lib/codemirror.min.js';
+        script.onload = function() {
+          var shellScript = document.createElement('script');
+          shellScript.src = 'https://unpkg.com/codemirror@5.65.15/mode/shell/shell.min.js';
+          shellScript.onload = function() {
+            initializeCodeMirror();
+          };
+          document.head.appendChild(shellScript);
+        };
+        document.head.appendChild(script);
+      } else {
+        initializeCodeMirror();
+      }
+    });
+  </script>
+  
   <!-- Styles -->
   <style>
     * {margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif;}
     body {background: linear-gradient(to bottom, #f9f9f9, #ffffff); color:#222; line-height:1.7; font-size:16px;}
     a {color:#007bff; text-decoration:none; transition: color 0.3s;}
     a:hover {color:#0056b3; text-decoration:underline;}
-    .container {max-width:1100px; margin:50px auto; padding:0 20px;}
+    .container {max-width:1100px; margin:40px auto; padding:0 15px;}
     .center {text-align:center;}
-    h1 {font-size:3rem; margin-bottom:1rem; color:#f05033; font-weight:700;}
-    h2 {font-size:2rem; margin:3rem 0 1.5rem; color:#333; font-weight:600; position:relative;}
+    h1 {font-size:2.8rem; margin-bottom:1rem; color:#f05033; font-weight:700;}
+    h2 {font-size:1.8rem; margin:2.5rem 0 1.2rem; color:#333; font-weight:600; position:relative;}
     h2::after {content:''; display:block; width:50px; height:3px; background:#f05033; margin:0.5rem auto 0;}
-    p {margin-bottom:1.5rem; font-weight:300;}
+    p {margin-bottom:1.2rem; font-weight:300;}
     img {max-width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;}
     img:hover {transform: scale(1.02);}
-    .badge {display:inline-block; margin:8px 8px 20px 0;}
-    table {width:100%; border-collapse:collapse; margin:2.5rem 0; box-shadow:0 2px 8px rgba(0,0,0,0.05);}
-    th, td {border:1px solid #e0e0e0; padding:15px; text-align:left;}
+    .badge {display:inline-block; margin:6px 6px 15px 0; max-width:150px;}
+    table {width:100%; border-collapse:collapse; margin:2rem 0; box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+    th, td {border:1px solid #e0e0e0; padding:12px; text-align:left;}
     th {background:#f05033; color:white; font-weight:600;}
     tr:nth-child(even) {background:#fdfdfd;}
-    .btn {display:inline-block; margin:12px 8px; padding:12px 28px; background:#007bff; color:white; border-radius:8px; font-weight:600; transition: background 0.3s, transform 0.2s;}
+    .btn {display:inline-block; margin:10px 6px; padding:10px 24px; background:#007bff; color:white; border-radius:8px; font-weight:600; transition: background 0.3s, transform 0.2s;}
     .btn:hover {background:#0056b3; transform:translateY(-2px);}
-    blockquote {border-left:5px solid #f05033; padding-left:1.5rem; color:#555; margin:1.5rem 0; font-style:italic; background:#fff; border-radius:4px; box-shadow:0 2px 4px rgba(0,0,0,0.05);}
-    hr {border:none; border-top:1px solid #eee; margin:3rem 0;}
-    ul, ol {margin:1rem 0 1.5rem 2rem; font-weight:300;}
-    li {margin-bottom:0.75rem;}
-    .hero {background:#fff; padding:40px 20px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); margin-bottom:40px;}
-    .social-share {margin:2rem 0;}
-    .social-share a {margin:0 10px; font-size:1.5rem; color:#555; transition: color 0.3s;}
+    blockquote {border-left:5px solid #f05033; padding-left:1.2rem; color:#555; margin:1.2rem 0; font-style:italic; background:#fff; border-radius:4px; box-shadow:0 2px 4px rgba(0,0,0,0.05);}
+    hr {border:none; border-top:1px solid #eee; margin:2rem 0;}
+    ul, ol {margin:1rem 0 1.2rem 1.5rem; font-weight:300;}
+    li {margin-bottom:0.6rem;}
+    .hero {background:#fff; padding:30px 15px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); margin-bottom:30px;}
+    .social-share {margin:1.5rem 0;}
+    .social-share a {margin:0 8px; font-size:1.3rem; color:#555; transition: color 0.3s;}
     .social-share a:hover {color:#f05033;}
-    .feature-icon {font-size:1.2rem; color:#f05033; margin-right:0.5rem;}
+    .feature-icon {font-size:1.1rem; color:#f05033; margin-right:0.4rem;}
     .learning-path tr:hover {background:#f8f9fa; transition: background 0.2s;}
-    .topic-card {background:#fff; padding:20px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.05); margin-bottom:20px; transition: box-shadow 0.3s;}
+    .topic-card {background:#fff; padding:15px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.05); margin-bottom:15px; transition: box-shadow 0.3s;}
     .topic-card:hover {box-shadow:0 6px 15px rgba(0,0,0,0.1);}
-    .topic-card h3 {font-size:1.5rem; color:#f05033; margin-bottom:0.5rem;}
-    .topic-card p {font-size:0.95rem; color:#666;}
-    footer {text-align:center; padding:20px; background:#fff; border-top:1px solid #eee; margin-top:40px; font-size:0.9rem; color:#777;}
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .container {max-width:100%; padding:0 15px;}
-      h1 {font-size:2.2rem;}
+    .topic-card h3 {font-size:1.4rem; color:#f05033; margin-bottom:0.4rem;}
+    .topic-card p {font-size:0.9rem; color:#666;}
+    footer {text-align:center; padding:15px; background:#fff; border-top:1px solid #eee; margin-top:30px; font-size:0.85rem; color:#777;}
+    
+    /* Code Demo Styles */
+    .code-demo {margin:1.5rem 0; background:#f8f9fa; padding:15px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.05);}
+    .code-demo textarea {width:100%; min-height:100px; border:none; resize:none; font-family:'Courier New', monospace;}
+    .CodeMirror {height:auto; border:1px solid #e0e0e0; border-radius:4px; font-size:0.9rem;}
+    .code-output {margin-top:1rem; padding:10px; background:#fff; border:1px solid #e0e0e0; border-radius:4px; font-family:'Courier New', monospace; font-size:0.9rem;}
+    .run-btn {background:#28a745; padding:8px 16px; font-size:0.9rem; margin-top:10px;}
+    .run-btn:hover {background:#218838; transform:translateY(-2px);}
+    .code-error {color:#dc3545; font-size:0.9rem; margin-top:1rem; text-align:center;}
+    .code-error a {color:#dc3545; text-decoration:underline;}
+    .code-error a:hover {color:#a71d2a;}
+    
+    /* Enhanced Mobile Responsiveness */
+    @media (max-width: 1024px) {
+      .container {max-width:100%; padding:0 12px;}
+      h1 {font-size:2.4rem;}
       h2 {font-size:1.6rem;}
-      .btn {padding:10px 20px; font-size:0.9rem;}
-      .hero {padding:30px 15px;}
-      table {font-size:0.85rem;}
-      .social-share a {font-size:1.2rem; margin:0 8px;}
-      .topic-card {padding:15px;}
+      .hero {padding:25px 12px;}
+      .btn {padding:8px 20px; font-size:0.85rem;}
+      .social-share a {font-size:1.2rem; margin:0 6px;}
+      .topic-card {padding:12px;}
+      table {font-size:0.8rem;}
+      th, td {padding:10px;}
+      .CodeMirror {font-size:0.85rem;}
+      .code-output {font-size:0.85rem;}
+    }
+    @media (max-width: 768px) {
+      h1 {font-size:2rem;}
+      h2 {font-size:1.4rem;}
+      .hero {padding:20px 10px;}
+      .btn {display:block; margin:8px auto; padding:10px; width:90%; max-width:300px;}
+      .badges {display:flex; flex-wrap:wrap; justify-content:center;}
+      .badge {max-width:120px;}
+      .social-share a {font-size:1.1rem;}
+      table {display:block; overflow-x:auto; white-space:nowrap;}
+      .topic-card {padding:10px;}
+      .topic-card h3 {font-size:1.2rem;}
+      .topic-card p {font-size:0.85rem;}
+      img {border-radius:8px;}
+      pre {font-size:0.8rem;}
+      .CodeMirror {font-size:0.8rem;}
+      .code-output {font-size:0.8rem;}
     }
     @media (max-width: 480px) {
-      h1 {font-size:1.8rem;}
-      .btn {display:block; margin:10px auto; width:80%;}
-      img {border-radius:8px;}
+      h1 {font-size:1.6rem;}
+      h2 {font-size:1.2rem;}
+      h2::after {width:40px;}
+      p {font-size:0.9rem;}
+      .btn {width:100%; font-size:0.8rem;}
+      .hero {padding:15px 8px; margin-bottom:20px;}
+      .social-share a {font-size:1rem; margin:0 5px;}
+      .badge {max-width:100px; margin:4px;}
+      .topic-card {padding:8px;}
+      .topic-card h3 {font-size:1.1rem;}
+      .topic-card p {font-size:0.8rem;}
+      footer {font-size:0.8rem; padding:10px;}
+      img {border-radius:6px;}
+      pre {font-size:0.75rem;}
+      .CodeMirror {font-size:0.75rem;}
+      .code-output {font-size:0.75rem;}
     }
   </style>
 </head>
@@ -92,7 +171,7 @@
   <h1>🚀 Git Guru: Master Git & GitHub from Scratch 🧠💻</h1>
   
   <p><strong>Hands-On Git & GitHub Learning Repository</strong><br>
-  <em>Learn version control visually, practically, and step-by-step — from basics to pro level!</em></p>
+  <em>Learn version control visually, practically, and interactively — from basics to pro level!</em></p>
   
   <a class="btn" href="https://maheshshukla1.github.io/GitHub-Guru/">View Live Course</a>
   <a class="btn" href="https://github.com/MaheshShukla1/GitHub-Guru/stargazers"><i class="fas fa-star"></i> Star</a>
@@ -117,9 +196,9 @@
 </div>
 
 <div class="container">
-  <p><strong>Git Guru</strong> is your <strong>complete hands-on guide</strong> to mastering <strong>Git & GitHub</strong> — from your very first commit to advanced commands like <code>rebase</code>, <code>stash</code>, and <code>reset</code>. Built with ❤️ for <strong>students, developers, and professionals</strong> who want to <em>learn by doing</em>.</p>
+  <p><strong>Git Guru</strong> is your <strong>complete hands-on guide</strong> to mastering <strong>Git & GitHub</strong> — from your first commit to advanced commands like <code>rebase</code>, <code>stash</code>, and <code>reset</code>. Built with ❤️ for <strong>students, developers, and professionals</strong> who want to <em>learn by doing</em>.</p>
   
-  <blockquote>🌟 Learn Git & GitHub step-by-step with real-world examples, command explanations, and fun practice exercises — all in one place!</blockquote>
+  <blockquote>🌟 Learn Git & GitHub step-by-step with real-world examples, command explanations, interactive demos, and fun practice exercises!</blockquote>
   
   <hr>
 
@@ -127,10 +206,10 @@
   <ul>
     <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Practical & Real-World Oriented</li>
     <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Beginner-Friendly + Advanced Concepts</li>
+    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Interactive Code Demos</li>
     <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> SEO-Optimized Markdown Lessons</li>
     <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Command + Theory + Example Format</li>
     <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Perfect for Self-Learning or Teaching Others</li>
-    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Ideal for Portfolio Projects or Resume Boost</li>
   </ul>
   
   <hr>
@@ -164,44 +243,132 @@
   
   <h2>⚙️ Setup Instructions</h2>
   <pre><code># Clone this repo
-git clone https://github.com/MaheshShukla1/github-guru.git
+git clone https://github.com/MaheshShukla1/GitHub-Guru.git
 
 # Move into folder
-cd github-guru
+cd GitHub-Guru
 </code></pre>
   <p>Open in VS Code or any editor and start exploring! ✨</p>
   
   <hr>
   
-  <h2>🗂️ Learning Path</h2>
+  <h2>🗂️ Learning Path with Interactive Demos</h2>
   <div class="topic-card">
     <h3>01: 🧭 Introduction to Git</h3>
-    <p>Discover what Git is, the fundamentals of version control, and why it's essential for modern development. Includes real-world analogies and basic concepts to get you started.</p>
+    <p>Discover what Git is, the fundamentals of version control, and why it's essential for modern development. Includes real-world analogies.</p>
     <a class="btn" href="./what-is-git.md">Start Here</a>
   </div>
   <div class="topic-card">
     <h3>02: ⚙️ Git Basics</h3>
-    <p>Learn essential commands like init, add, commit, status, and log. Hands-on examples to create and manage your first repository locally.</p>
+    <p>Learn essential commands like init, add, commit, status, and log. Try the interactive demo below!</p>
+    <div class="code-demo">
+      <textarea id="gitBasicsDemo">
+# Initialize a new Git repository
+git init
+
+# Check the status of your repository
+git status
+
+# Add a file to staging
+git add index.html
+
+# Commit changes with a message
+git commit -m "Initial commit"
+      </textarea>
+      <button class="btn run-btn" onclick="runDemo('gitBasicsDemo', 'gitBasicsOutput')">Run Demo</button>
+      <div id="gitBasicsOutput" class="code-output"></div>
+      <div id="gitBasicsError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./git-basics.md">Explore the guide instead!</a></div>
+    </div>
     <a class="btn" href="./git-basics.md">Explore →</a>
   </div>
   <div class="topic-card">
     <h3>03: 🌿 Branching & Merging</h3>
-    <p>Master branching for parallel development, merging changes, and resolving conflicts. Practical scenarios and best practices included.</p>
+    <p>Master branching for parallel development and merging changes. Try creating and switching branches!</p>
+    <div class="code-demo">
+      <textarea id="branchingDemo">
+# Create a new branch
+git branch feature-branch
+
+# Switch to the new branch
+git checkout feature-branch
+
+# Make changes and commit
+git add .
+git commit -m "Add feature"
+
+# Switch back to main branch
+git checkout main
+
+# Merge the feature branch
+git merge feature-branch
+      </textarea>
+      <button class="btn run-btn" onclick="runDemo('branchingDemo', 'branchingOutput')">Run Demo</button>
+      <div id="branchingOutput" class="code-output"></div>
+      <div id="branchingError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./branching-and-merging.md">Explore the guide instead!</a></div>
+    </div>
     <a class="btn" href="./branching-and-merging.md">Explore →</a>
   </div>
   <div class="topic-card">
     <h3>04: ☁️ Remote Repositories (GitHub)</h3>
-    <p>Connect your local repo to GitHub, learn push/pull, and manage remotes. Tips for secure collaboration and repo management.</p>
+    <p>Connect your local repo to GitHub and learn push/pull. Try the demo for remote setup!</p>
+    <div class="code-demo">
+      <textarea id="remoteDemo">
+# Add a remote repository
+git remote add origin https://github.com/MaheshShukla1/GitHub-Guru.git
+
+# Push changes to GitHub
+git push -u origin main
+      </textarea>
+      <button class="btn run-btn" onclick="runDemo('remoteDemo', 'remoteOutput')">Run Demo</button>
+      <div id="remoteOutput" class="code-output"></div>
+      <div id="remoteError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./github-remotes.md">Explore the guide instead!</a></div>
+    </div>
     <a class="btn" href="./github-remotes.md">Explore →</a>
   </div>
   <div class="topic-card">
     <h3>05: 🔄 Collaboration & Pull Requests</h3>
-    <p>Understand pull requests, forking, and open-source workflows. Step-by-step guide to contributing to projects.</p>
+    <p>Understand pull requests and open-source workflows. Simulate a PR workflow below!</p>
+    <div class="code-demo">
+      <textarea id="prDemo">
+# Fork the repo, then clone it
+git clone https://github.com/your-username/GitHub-Guru.git
+
+# Create a new branch
+git checkout -b my-feature
+
+# Make changes and commit
+git add .
+git commit -m "Add my feature"
+
+# Push to your fork
+git push origin my-feature
+
+# Create a pull request on GitHub
+      </textarea>
+      <button class="btn run-btn" onclick="runDemo('prDemo', 'prOutput')">Run Demo</button>
+      <div id="prOutput" class="code-output"></div>
+      <div id="prError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./pull-requests.md">Explore the guide instead!</a></div>
+    </div>
     <a class="btn" href="./pull-requests.md">Explore →</a>
   </div>
   <div class="topic-card">
     <h3>06: 🧰 Advanced Git</h3>
-    <p>Dive into rebase, stash, reset, and revert. Advanced techniques for clean histories and error recovery, with examples.</p>
+    <p>Dive into rebase, stash, reset, and revert. Try stashing changes interactively!</p>
+    <div class="code-demo">
+      <textarea id="advancedDemo">
+# Save changes temporarily
+git stash
+
+# View stashed changes
+git stash list
+
+# Apply and remove the latest stash
+git stash pop
+      </textarea>
+      <button class="btn run-btn" onclick="runDemo('advancedDemo', 'advancedOutput')">Run Demo</button>
+      <div id="advancedOutput" class="code-output"></div>
+      <div id="advancedError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./advanced-git.md">Explore the guide instead!</a></div>
+    </div>
     <a class="btn" href="./advanced-git.md">Explore →</a>
   </div>
 
@@ -225,11 +392,87 @@ cd github-guru
 
   <h2>🌟 Star, Fork, & Share</h2>
   <p>If you found this helpful — ⭐ <strong>Star it</strong>, 🍴 <strong>Fork it</strong>, and 💬 <strong>Share it</strong> with your dev friends!</p>
+
+  <hr>
+
+  <h2>💬 Join the Community</h2>
+  <p><a href="https://www.linkedin.com/in/mahesh-shukla">Connect on LinkedIn: Mahesh Shukla</a></p>
 </div>
 
 <footer>
   &copy; 2025 Mahesh Shukla | Built with ❤️ for the dev community
 </footer>
+
+<script>
+  // Simulated Git command outputs
+  const commandOutputs = {
+    gitBasicsDemo: `Initialized empty Git repository in /path/to/repo/.git/
+On branch main
+No commits yet
+Untracked files:
+  index.html
+Changes to be committed:
+  new file:   index.html
+[main (root-commit) abc1234] Initial commit
+ 1 file changed, 10 insertions(+)
+ create mode 100644 index.html`,
+    branchingDemo: `Switched to branch 'feature-branch'
+[feature-branch abc1235] Add feature
+ 1 file changed, 5 insertions(+)
+Switched to branch 'main'
+Merge made by the 'recursive' strategy.
+ 1 file changed, 5 insertions(+)`,
+    remoteDemo: `Branch 'main' set up to track remote branch 'main' from 'origin'.
+To https://github.com/MaheshShukla1/GitHub-Guru.git
+ * [new branch]      main -> main`,
+    prDemo: `Cloning into 'GitHub-Guru'...
+Switched to a new branch 'my-feature'
+[my-feature abc1236] Add my feature
+ 1 file changed, 3 insertions(+)
+To https://github.com/your-username/GitHub-Guru.git
+ * [new branch]      my-feature -> my-feature
+# Follow GitHub UI to create a pull request`,
+    advancedDemo: `Saved working directory and index state WIP on main: abc1234 Initial commit
+stash@{0}: WIP on main: abc1234 Initial commit
+Dropped refs/stash@{0}`
+  };
+
+  // Run demo function
+  function runDemo(textareaId, outputId) {
+    const output = document.getElementById(outputId);
+    output.textContent = commandOutputs[textareaId] || 'No output available for this demo.';
+  }
+
+  // Initialize CodeMirror
+  function initializeCodeMirror() {
+    if (typeof CodeMirror === 'undefined') {
+      console.error('CodeMirror failed to load from both CDNs. Please check your network connection.');
+      document.querySelectorAll('.code-demo').forEach(demo => {
+        const errorDiv = demo.querySelector('.code-error');
+        if (errorDiv) errorDiv.style.display = 'block';
+      });
+      return;
+    }
+
+    // Initialize CodeMirror for each textarea
+    document.querySelectorAll('.code-demo textarea').forEach(textarea => {
+      CodeMirror.fromTextArea(textarea, {
+        mode: 'shell',
+        theme: 'default',
+        lineNumbers: true,
+        readOnly: false
+      });
+    });
+  }
+
+  // Initialize after DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.CodeMirror) {
+      initializeCodeMirror();
+    }
+    // Fallback handling is managed in window.load event
+  });
+</script>
 
 </body>
 </html>
