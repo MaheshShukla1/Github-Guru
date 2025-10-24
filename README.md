@@ -75,7 +75,7 @@ Open in VS Code or any editor and start exploring! ✨
 |Section|Topic|Link|
 |---|---|---|
 |01|🧭 Introduction|[Go →](https://github.com/MaheshShukla1/Github-Guru/blob/main/what-is-git.md)|
-|02|🪄 Git Basics|[Go →](02-Git-Basics/)|
+|02|🪄 Git Basics|[Go →](https://github.com/MaheshShukla1/Github-Guru/blob/main/git-basics.md)|
 |03|🌿 Branching & Merging|[Go →](03-Branching-Merging/)|
 |04|☁️ Remote Repos (GitHub)|[Go →](04-Remote-Repos/)|
 |05|🧰 Advanced Git|[Go →](05-Advanced-Git/)|
