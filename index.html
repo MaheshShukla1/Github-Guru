@@ -5,24 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com; img-src 'self' https://raw.githubusercontent.com https://img.shields.io; connect-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com https://buttons.github.io; img-src 'self' https://raw.githubusercontent.com https://img.shields.io https://media.giphy.com https://contrib.rocks; connect-src 'self';">
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Master Git and GitHub from scratch with hands-on tutorials, real-world examples, commands, and interactive code demos. Perfect for beginners, developers, students, and professionals.">
-  <meta name="keywords" content="git tutorial, learn git, git github course, git commands, github beginner guide, git rebase, git merge, open source contribution, devops git basics, version control, git branching, git pull requests, interactive git demos">
+  <meta name="description" content="Master Git and GitHub from scratch with hands-on tutorials, real-world examples, commands, and interactive code demos. Perfect for beginners, developers, students, and professionals. Learn version control, git branching, and more!">
+  <meta name="keywords" content="git tutorial, learn git, git github course, git commands, github beginner guide, git rebase, git merge, open source contribution, devops git basics, version control, git branching, git pull requests, interactive git demos, git cheat sheet">
   <meta name="author" content="Mahesh Shukla">
   <meta name="robots" content="index, follow">
   
   <!-- OG / Social Meta -->
   <meta property="og:title" content="Git Guru: Master Git & GitHub from Scratch">
   <meta property="og:description" content="Hands-on guide to Git and GitHub with practical examples, commands, projects, and interactive demos. Ideal for developers and beginners.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png">
-  <meta property="og:url" content="https://maheshshukla1.github.io/GitHub-Guru/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/MaheshShukla1/github-guru/main/assets/github-guru-banner.png">
+  <meta property="og:url" content="https://maheshshukla1.github.io/github-guru/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Git Guru: Master Git & GitHub from Scratch">
   <meta name="twitter:description" content="Hands-on guide to Git and GitHub with practical examples, commands, projects, and interactive demos.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/MaheshShukla1/github-guru/main/assets/github-guru-banner.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Git Guru: Master Git & GitHub from Scratch",
+      "description": "A hands-on course to learn Git and GitHub with practical examples, commands, and interactive demos. Perfect for beginners and developers.",
+      "provider": {
+        "@type": "Person",
+        "name": "Mahesh Shukla",
+        "sameAs": "https://www.linkedin.com/in/mahesh-shukla"
+      },
+      "url": "https://maheshshukla1.github.io/github-guru/",
+      "keywords": "git tutorial, git commands, github, version control"
+    }
+  </script>
 
   <title>Git Guru: Master Git & GitHub from Scratch</title>
   
@@ -37,6 +54,9 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.js" integrity="sha512-VmI26uDqt1vm6IkosL4tW7O1ar3KbouZ2eH3r95Kx5qO5EajG2p3QaKvaTBlWTwosnyE2nL7jPUtCvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/shell/shell.min.js" integrity="sha512-8z6wcrnyUoQbP5G2vB2RtZjBB7F6bwJ0QFl3eCHC3D63rwXyVRfYIWJAjH2rY2gD24b3Vqw4H3xm/x0QNeKNeSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
+  <!-- GitHub Buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
   <!-- Fallback CDN for CodeMirror -->
   <script>
     window.addEventListener('load', function() {
@@ -67,7 +87,57 @@
   <!-- Styles -->
   <style>
     * {margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif;}
-    body {background: linear-gradient(to bottom, #f9f9f9, #ffffff); color:#222; line-height:1.7; font-size:16px;}
+    body {
+      background: linear-gradient(135deg, #e0e7ff, #e6f3fa);
+      color:#222;
+      line-height:1.7;
+      font-size:16px;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(240,80,51,0.1), rgba(0,123,255,0.1));
+      animation: wave 10s infinite ease-in-out;
+      z-index: -1;
+    }
+    @keyframes wave {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+    .dark-mode {
+      background: linear-gradient(135deg, #2a2a3e, #1a1a2e);
+      color: #e0e0e0;
+    }
+    .dark-mode .hero, .dark-mode .topic-card, .dark-mode footer {
+      background: #2a2a3e;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    .dark-mode h1, .dark-mode h2, .dark-mode h3 {
+      color: #ff6f61;
+    }
+    .dark-mode p, .dark-mode li {
+      color: #d0d0d0;
+    }
+    .dark-mode .code-demo {
+      background: #1e1e2e;
+    }
+    .dark-mode .code-output {
+      background: #2a2a3e;
+      border-color: #444;
+    }
+    .dark-mode .btn {
+      background: #ff6f61;
+    }
+    .dark-mode .btn:hover {
+      background: #e65a50;
+    }
     a {color:#007bff; text-decoration:none; transition: color 0.3s;}
     a:hover {color:#0056b3; text-decoration:underline;}
     .container {max-width:1100px; margin:40px auto; padding:0 15px;}
@@ -112,6 +182,102 @@
     .code-error a {color:#dc3545; text-decoration:underline;}
     .code-error a:hover {color:#a71d2a;}
     
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #f05033;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      display: none;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: opacity 0.3s;
+    }
+    .back-to-top:hover {
+      background: #d9432b;
+    }
+    
+    /* Dark Mode Toggle */
+    .dark-mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #007bff;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+    .dark-mode-toggle:hover {
+      background: #0056b3;
+    }
+    
+    /* Progress Tracker */
+    .progress-tracker {
+      margin: 2rem 0;
+      padding: 15px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .progress-tracker label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .progress-tracker input {
+      margin-right: 0.5rem;
+    }
+    .progress-bar {
+      height: 10px;
+      background: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: #f05033;
+      transition: width 0.3s;
+    }
+    
+    /* Preloader */
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s;
+    }
+    .preloader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f05033;
+      border-top: 5px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
     /* Enhanced Mobile Responsiveness */
     @media (max-width: 1024px) {
       .container {max-width:100%; padding:0 12px;}
@@ -125,6 +291,8 @@
       th, td {padding:10px;}
       .CodeMirror {font-size:0.85rem;}
       .code-output {font-size:0.85rem;}
+      .dark-mode-toggle {top: 15px; right: 15px;}
+      .back-to-top {bottom: 15px; right: 15px;}
     }
     @media (max-width: 768px) {
       h1 {font-size:2rem;}
@@ -142,6 +310,8 @@
       pre {font-size:0.8rem;}
       .CodeMirror {font-size:0.8rem;}
       .code-output {font-size:0.8rem;}
+      .dark-mode-toggle {font-size:0.8rem;}
+      .back-to-top {padding:8px 12px;}
     }
     @media (max-width: 480px) {
       h1 {font-size:1.6rem;}
@@ -160,109 +330,148 @@
       pre {font-size:0.75rem;}
       .CodeMirror {font-size:0.75rem;}
       .code-output {font-size:0.75rem;}
+      .dark-mode-toggle {font-size:0.75rem; padding:6px 10px;}
+      .back-to-top {padding:6px 10px;}
     }
   </style>
 </head>
 <body>
-
-<div class="container center hero">
-  <img src="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png" alt="Git Guru Banner - Master Git and GitHub with Hands-On Tutorials">
-  
-  <h1>🚀 Git Guru: Master Git & GitHub from Scratch 🧠💻</h1>
-  
-  <p><strong>Hands-On Git & GitHub Learning Repository</strong><br>
-  <em>Learn version control visually, practically, and interactively — from basics to pro level!</em></p>
-  
-  <a class="btn" href="https://maheshshukla1.github.io/GitHub-Guru/">View Live Course</a>
-  <a class="btn" href="https://github.com/MaheshShukla1/GitHub-Guru/stargazers"><i class="fas fa-star"></i> Star</a>
-  <a class="btn" href="https://github.com/MaheshShukla1/GitHub-Guru/network/members"><i class="fas fa-code-branch"></i> Fork</a>
-
-  <div class="badges">
-    <img class="badge" src="https://img.shields.io/github/license/MaheshShukla1/GitHub-Guru" alt="License Badge">
-    <img class="badge" src="https://img.shields.io/github/stars/MaheshShukla1/GitHub-Guru?style=social" alt="Stars Badge">
-    <img class="badge" src="https://img.shields.io/github/forks/MaheshShukla1/GitHub-Guru?style=social" alt="Forks Badge">
-    <img class="badge" src="https://img.shields.io/badge/Git-Learning-red?logo=git" alt="Git Learning Badge">
-    <img class="badge" src="https://img.shields.io/badge/GitHub-Projects-blue?logo=github" alt="GitHub Projects Badge">
-    <img class="badge" src="https://img.shields.io/badge/Made%20with-%E2%9D%A4-red" alt="Made with Love Badge">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="spinner"></div>
   </div>
 
-  <div class="social-share">
-    <p>Share this with your network:</p>
-    <a href="https://twitter.com/intent/tweet?url=https://maheshshukla1.github.io/GitHub-Guru/&text=Master Git & GitHub from scratch with this hands-on guide! 🚀" target="_blank"><i class="fab fa-x-twitter"></i></a>
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://maheshshukla1.github.io/GitHub-Guru/&title=Git Guru: Master Git & GitHub" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://maheshshukla1.github.io/GitHub-Guru/" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://reddit.com/submit?url=https://maheshshukla1.github.io/GitHub-Guru/&title=Git Guru: Master Git & GitHub from Scratch" target="_blank"><i class="fab fa-reddit"></i></a>
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+    <i class="fas fa-moon"></i> Dark Mode
   </div>
-</div>
 
-<div class="container">
-  <p><strong>Git Guru</strong> is your <strong>complete hands-on guide</strong> to mastering <strong>Git & GitHub</strong> — from your first commit to advanced commands like <code>rebase</code>, <code>stash</code>, and <code>reset</code>. Built with ❤️ for <strong>students, developers, and professionals</strong> who want to <em>learn by doing</em>.</p>
-  
-  <blockquote>🌟 Learn Git & GitHub step-by-step with real-world examples, command explanations, interactive demos, and fun practice exercises!</blockquote>
-  
-  <hr>
+  <!-- Back to Top Button -->
+  <div class="back-to-top" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </div>
 
-  <h2>🔍 Why Choose Git Guru?</h2>
-  <ul>
-    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Practical & Real-World Oriented</li>
-    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Beginner-Friendly + Advanced Concepts</li>
-    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Interactive Code Demos</li>
-    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> SEO-Optimized Markdown Lessons</li>
-    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Command + Theory + Example Format</li>
-    <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Perfect for Self-Learning or Teaching Others</li>
-  </ul>
-  
-  <hr>
-  
-  <h2>🧩 What You’ll Learn</h2>
-  <ul>
-    <li><span class="feature-icon"><i class="fas fa-compass"></i></span> What is Git & How Version Control Works</li>
-    <li><span class="feature-icon"><i class="fas fa-tools"></i></span> Basic Git Commands (<code>init</code>, <code>add</code>, <code>commit</code>, <code>status</code>, <code>log</code>)</li>
-    <li><span class="feature-icon"><i class="fas fa-code-branch"></i></span> Branching, Merging, and Resolving Conflicts</li>
-    <li><span class="feature-icon"><i class="fas fa-cloud"></i></span> Working with Remote Repositories & GitHub</li>
-    <li><span class="feature-icon"><i class="fas fa-sync"></i></span> Pull Requests, Collaboration, and Open Source Flow</li>
-    <li><span class="feature-icon"><i class="fas fa-toolbox"></i></span> Advanced Git Techniques (<code>rebase</code>, <code>stash</code>, <code>reset</code>, <code>revert</code>)</li>
-    <li><span class="feature-icon"><i class="fas fa-lightbulb"></i></span> Pro Tips, Best Practices & Common Mistakes to Avoid</li>
-  </ul>
-  
-  <hr>
+  <div class="container center hero">
+    <img src="https://raw.githubusercontent.com/MaheshShukla1/github-guru/main/assets/github-guru-banner.png" alt="Git Guru Banner - Master Git and GitHub with Hands-On Tutorials">
+    
+    <h1>🚀 Git Guru: Master Git & GitHub from Scratch 🧠💻</h1>
+    
+    <p><strong>Hands-On Git & GitHub Learning Repository</strong><br>
+    <em>Learn version control visually, practically, and interactively — from basics to pro level!</em></p>
+    
+    <a class="btn" href="https://maheshshukla1.github.io/github-guru/">View Live Course</a>
+    <a class="btn" href="https://github.com/MaheshShukla1/github-guru/stargazers"><i class="fas fa-star"></i> Star</a>
+    <a class="btn" href="https://github.com/MaheshShukla1/github-guru/network/members"><i class="fas fa-code-branch"></i> Fork</a>
+    <a class="btn github-button" href="https://github.com/MaheshShukla1" data-icon="octicon-follow" data-size="large">Follow @MaheshShukla1</a>
 
-  <h2>🧠 Prerequisites</h2>
-  <ul>
-    <li>Basic computer knowledge 💻</li>
-    <li>Installed:
-      <ul>
-        <li><a href="https://git-scm.com/downloads">Git</a></li>
-        <li><a href="https://code.visualstudio.com/">VS Code</a> (recommended)</li>
-      </ul>
-    </li>
-    <li>A <a href="https://github.com/">GitHub account</a></li>
-  </ul>
-  
-  <hr>
-  
-  <h2>⚙️ Setup Instructions</h2>
-  <pre><code># Clone this repo
-git clone https://github.com/MaheshShukla1/GitHub-Guru.git
+    <div class="badges">
+      <img class="badge" src="https://img.shields.io/github/license/MaheshShukla1/github-guru" alt="License Badge">
+      <img class="badge" src="https://img.shields.io/github/stars/MaheshShukla1/github-guru?style=social" alt="Stars Badge">
+      <img class="badge" src="https://img.shields.io/github/forks/MaheshShukla1/github-guru?style=social" alt="Forks Badge">
+      <img class="badge" src="https://img.shields.io/badge/Git-Learning-red?logo=git" alt="Git Learning Badge">
+      <img class="badge" src="https://img.shields.io/badge/GitHub-Projects-blue?logo=github" alt="GitHub Projects Badge">
+      <img class="badge" src="https://img.shields.io/badge/Made%20with-%E2%9D%A4-red" alt="Made with Love Badge">
+    </div>
+
+    <div class="social-share">
+      <p>Share this with your network:</p>
+      <a href="https://twitter.com/intent/tweet?url=https://maheshshukla1.github.io/github-guru/&text=Master Git & GitHub from scratch with this hands-on guide! 🚀" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://maheshshukla1.github.io/github-guru/&title=Git Guru: Master Git & GitHub" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://maheshshukla1.github.io/github-guru/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://reddit.com/submit?url=https://maheshshukla1.github.io/github-guru/&title=Git Guru: Master Git & GitHub from Scratch" target="_blank"><i class="fab fa-reddit"></i></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <p><strong>Git Guru</strong> is your <strong>complete hands-on guide</strong> to mastering <strong>Git & GitHub</strong> — from your first commit to advanced commands like <code>rebase</code>, <code>stash</code>, and <code>reset</code>. Built with ❤️ for <strong>students, developers, and professionals</strong> who want to <em>learn by doing</em>.</p>
+    
+    <blockquote>🌟 Learn Git & GitHub step-by-step with real-world examples, command explanations, interactive demos, and fun practice exercises!</blockquote>
+    
+    <hr>
+
+    <h2>🔍 Why Choose Git Guru?</h2>
+    <ul>
+      <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Practical & Real-World Oriented</li>
+      <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Beginner-Friendly + Advanced Concepts</li>
+      <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Interactive Code Demos</li>
+      <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> SEO-Optimized Markdown Lessons</li>
+      <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Command + Theory + Example Format</li>
+      <li><span class="feature-icon"><i class="fas fa-check-circle"></i></span> Perfect for Self-Learning or Teaching Others</li>
+    </ul>
+    
+    <hr>
+    
+    <h2>🧩 What You’ll Learn</h2>
+    <ul>
+      <li><span class="feature-icon"><i class="fas fa-compass"></i></span> What is Git & How Version Control Works</li>
+      <li><span class="feature-icon"><i class="fas fa-tools"></i></span> Basic Git Commands (<code>init</code>, <code>add</code>, <code>commit</code>, <code>status</code>, <code>log</code>)</li>
+      <li><span class="feature-icon"><i class="fas fa-code-branch"></i></span> Branching, Merging, and Resolving Conflicts</li>
+      <li><span class="feature-icon"><i class="fas fa-cloud"></i></span> Working with Remote Repositories & GitHub</li>
+      <li><span class="feature-icon"><i class="fas fa-sync"></i></span> Pull Requests, Collaboration, and Open Source Flow</li>
+      <li><span class="feature-icon"><i class="fas fa-toolbox"></i></span> Advanced Git Techniques (<code>rebase</code>, <code>stash</code>, <code>reset</code>, <code>revert</code>)</li>
+      <li><span class="feature-icon"><i class="fas fa-lightbulb"></i></span> Pro Tips, Best Practices & Common Mistakes to Avoid</li>
+    </ul>
+    
+    <hr>
+
+    <h2>🧠 Prerequisites</h2>
+    <ul>
+      <li>Basic computer knowledge 💻</li>
+      <li>Installed:
+        <ul>
+          <li><a href="https://git-scm.com/downloads">Git</a></li>
+          <li><a href="https://code.visualstudio.com/">VS Code</a> (recommended)</li>
+        </ul>
+      </li>
+      <li>A <a href="https://github.com/">GitHub account</a></li>
+    </ul>
+    
+    <hr>
+    
+    <h2>⚙️ Setup Instructions</h2>
+    <pre><code># Clone this repo
+git clone https://github.com/MaheshShukla1/github-guru.git
 
 # Move into folder
-cd GitHub-Guru
+cd github-guru
 </code></pre>
-  <p>Open in VS Code or any editor and start exploring! ✨</p>
-  
-  <hr>
-  
-  <h2>🗂️ Learning Path with Interactive Demos</h2>
-  <div class="topic-card">
-    <h3>01: 🧭 Introduction to Git</h3>
-    <p>Discover what Git is, the fundamentals of version control, and why it's essential for modern development. Includes real-world analogies.</p>
-    <a class="btn" href="./what-is-git.md">Start Here</a>
-  </div>
-  <div class="topic-card">
-    <h3>02: ⚙️ Git Basics</h3>
-    <p>Learn essential commands like init, add, commit, status, and log. Try the interactive demo below!</p>
-    <div class="code-demo">
-      <textarea id="gitBasicsDemo">
+    <p>Open in VS Code or any editor and start exploring! ✨</p>
+    
+    <hr>
+
+    <h2>🚀 Quick Start Example</h2>
+    <p>Here's a simple git workflow to get you started:</p>
+    <ol>
+      <li>Initialize a repo: <code>git init</code></li>
+      <li>Add files: <code>git add .</code></li>
+      <li>Commit: <code>git commit -m "First commit"</code></li>
+    </ol>
+    <img src="https://media.giphy.com/media/3o7bu8o2l4fB6A2z6/giphy.gif" alt="Git Commit Demo - Animated GIF showing git init, add, and commit commands">
+    <p><a href="./git-basics.md">See more in Git Basics</a></p>
+    
+    <hr>
+    
+    <h2>🗂️ Learning Path with Interactive Demos</h2>
+    <div class="progress-tracker">
+      <h3>Track Your Progress</h3>
+      <label><input type="checkbox" class="progress-checkbox" data-section="intro"> Introduction to Git</label>
+      <label><input type="checkbox" class="progress-checkbox" data-section="basics"> Git Basics</label>
+      <label><input type="checkbox" class="progress-checkbox" data-section="branching"> Branching & Merging</label>
+      <label><input type="checkbox" class="progress-checkbox" data-section="remotes"> Remote Repositories</label>
+      <label><input type="checkbox" class="progress-checkbox" data-section="pr"> Collaboration & Pull Requests</label>
+      <label><input type="checkbox" class="progress-checkbox" data-section="advanced"> Advanced Git</label>
+      <div class="progress-bar"><div class="progress-bar-fill" style="width: 0%;"></div></div>
+    </div>
+    <div class="topic-card">
+      <h3>01: 🧭 Introduction to Git</h3>
+      <p>Discover what Git is, the fundamentals of version control, and why it's essential for modern development. Includes real-world analogies.</p>
+      <a class="btn" href="./what-is-git.md">Start Here</a>
+    </div>
+    <div class="topic-card">
+      <h3>02: ⚙️ Git Basics</h3>
+      <p>Learn essential commands like init, add, commit, status, and log. Try the interactive demo below!</p>
+      <div class="code-demo">
+        <textarea id="gitBasicsDemo">
 # Initialize a new Git repository
 git init
 
@@ -274,18 +483,18 @@ git add index.html
 
 # Commit changes with a message
 git commit -m "Initial commit"
-      </textarea>
-      <button class="btn run-btn" onclick="runDemo('gitBasicsDemo', 'gitBasicsOutput')">Run Demo</button>
-      <div id="gitBasicsOutput" class="code-output"></div>
-      <div id="gitBasicsError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./git-basics.md">Explore the guide instead!</a></div>
+        </textarea>
+        <button class="btn run-btn" onclick="runDemo('gitBasicsDemo', 'gitBasicsOutput')">Run Demo</button>
+        <div id="gitBasicsOutput" class="code-output"></div>
+        <div id="gitBasicsError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./git-basics.md">Explore the guide instead!</a></div>
+      </div>
+      <a class="btn" href="./git-basics.md">Explore →</a>
     </div>
-    <a class="btn" href="./git-basics.md">Explore →</a>
-  </div>
-  <div class="topic-card">
-    <h3>03: 🌿 Branching & Merging</h3>
-    <p>Master branching for parallel development and merging changes. Try creating and switching branches!</p>
-    <div class="code-demo">
-      <textarea id="branchingDemo">
+    <div class="topic-card">
+      <h3>03: 🌿 Branching & Merging</h3>
+      <p>Master branching for parallel development and merging changes. Try creating and switching branches!</p>
+      <div class="code-demo">
+        <textarea id="branchingDemo">
 # Create a new branch
 git branch feature-branch
 
@@ -301,37 +510,37 @@ git checkout main
 
 # Merge the feature branch
 git merge feature-branch
-      </textarea>
-      <button class="btn run-btn" onclick="runDemo('branchingDemo', 'branchingOutput')">Run Demo</button>
-      <div id="branchingOutput" class="code-output"></div>
-      <div id="branchingError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./branching-and-merging.md">Explore the guide instead!</a></div>
+        </textarea>
+        <button class="btn run-btn" onclick="runDemo('branchingDemo', 'branchingOutput')">Run Demo</button>
+        <div id="branchingOutput" class="code-output"></div>
+        <div id="branchingError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./branching-and-merging.md">Explore the guide instead!</a></div>
+      </div>
+      <a class="btn" href="./branching-and-merging.md">Explore →</a>
     </div>
-    <a class="btn" href="./branching-and-merging.md">Explore →</a>
-  </div>
-  <div class="topic-card">
-    <h3>04: ☁️ Remote Repositories (GitHub)</h3>
-    <p>Connect your local repo to GitHub and learn push/pull. Try the demo for remote setup!</p>
-    <div class="code-demo">
-      <textarea id="remoteDemo">
+    <div class="topic-card">
+      <h3>04: ☁️ Remote Repositories (GitHub)</h3>
+      <p>Connect your local repo to GitHub and learn push/pull. Try the demo for remote setup!</p>
+      <div class="code-demo">
+        <textarea id="remoteDemo">
 # Add a remote repository
-git remote add origin https://github.com/MaheshShukla1/GitHub-Guru.git
+git remote add origin https://github.com/MaheshShukla1/github-guru.git
 
 # Push changes to GitHub
 git push -u origin main
-      </textarea>
-      <button class="btn run-btn" onclick="runDemo('remoteDemo', 'remoteOutput')">Run Demo</button>
-      <div id="remoteOutput" class="code-output"></div>
-      <div id="remoteError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./github-remotes.md">Explore the guide instead!</a></div>
+        </textarea>
+        <button class="btn run-btn" onclick="runDemo('remoteDemo', 'remoteOutput')">Run Demo</button>
+        <div id="remoteOutput" class="code-output"></div>
+        <div id="remoteError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./github-remotes.md">Explore the guide instead!</a></div>
+      </div>
+      <a class="btn" href="./github-remotes.md">Explore →</a>
     </div>
-    <a class="btn" href="./github-remotes.md">Explore →</a>
-  </div>
-  <div class="topic-card">
-    <h3>05: 🔄 Collaboration & Pull Requests</h3>
-    <p>Understand pull requests and open-source workflows. Simulate a PR workflow below!</p>
-    <div class="code-demo">
-      <textarea id="prDemo">
+    <div class="topic-card">
+      <h3>05: 🔄 Collaboration & Pull Requests</h3>
+      <p>Understand pull requests and open-source workflows. Simulate a PR workflow below!</p>
+      <div class="code-demo">
+        <textarea id="prDemo">
 # Fork the repo, then clone it
-git clone https://github.com/your-username/GitHub-Guru.git
+git clone https://github.com/your-username/github-guru.git
 
 # Create a new branch
 git checkout -b my-feature
@@ -344,18 +553,18 @@ git commit -m "Add my feature"
 git push origin my-feature
 
 # Create a pull request on GitHub
-      </textarea>
-      <button class="btn run-btn" onclick="runDemo('prDemo', 'prOutput')">Run Demo</button>
-      <div id="prOutput" class="code-output"></div>
-      <div id="prError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./pull-requests.md">Explore the guide instead!</a></div>
+        </textarea>
+        <button class="btn run-btn" onclick="runDemo('prDemo', 'prOutput')">Run Demo</button>
+        <div id="prOutput" class="code-output"></div>
+        <div id="prError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./pull-requests.md">Explore the guide instead!</a></div>
+      </div>
+      <a class="btn" href="./pull-requests.md">Explore →</a>
     </div>
-    <a class="btn" href="./pull-requests.md">Explore →</a>
-  </div>
-  <div class="topic-card">
-    <h3>06: 🧰 Advanced Git</h3>
-    <p>Dive into rebase, stash, reset, and revert. Try stashing changes interactively!</p>
-    <div class="code-demo">
-      <textarea id="advancedDemo">
+    <div class="topic-card">
+      <h3>06: 🧰 Advanced Git</h3>
+      <p>Dive into rebase, stash, reset, and revert. Try stashing changes interactively!</p>
+      <div class="code-demo">
+        <textarea id="advancedDemo">
 # Save changes temporarily
 git stash
 
@@ -364,49 +573,50 @@ git stash list
 
 # Apply and remove the latest stash
 git stash pop
-      </textarea>
-      <button class="btn run-btn" onclick="runDemo('advancedDemo', 'advancedOutput')">Run Demo</button>
-      <div id="advancedOutput" class="code-output"></div>
-      <div id="advancedError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./advanced-git.md">Explore the guide instead!</a></div>
+        </textarea>
+        <button class="btn run-btn" onclick="runDemo('advancedDemo', 'advancedOutput')">Run Demo</button>
+        <div id="advancedOutput" class="code-output"></div>
+        <div id="advancedError" class="code-error" style="display:none;">Interactive demo unavailable due to loading issues. <a href="./advanced-git.md">Explore the guide instead!</a></div>
+      </div>
+      <a class="btn" href="./advanced-git.md">Explore →</a>
     </div>
-    <a class="btn" href="./advanced-git.md">Explore →</a>
+
+    <hr>
+    
+    <h2>🤝 Contribution Guidelines</h2>
+    <ol>
+      <li>Fork this repo</li>
+      <li>Create a new branch</li>
+      <li>Add or improve content</li>
+      <li>Submit a pull request</li>
+    </ol>
+    <p>💡 Pro Tip: Use screenshots, examples, or GIFs to make it even better!</p>
+    
+    <hr>
+
+    <h2>👥 Contributors</h2>
+    <p>Thanks to our amazing contributors!</p>
+    <img src="https://contrib.rocks/image?repo=MaheshShukla1/github-guru" alt="Contributors to Git Guru">
+
+    <hr>
+    
+    <h2>📜 License</h2>
+    <p>This project is licensed under the <a href="LICENSE">MIT License</a>.</p>
+
+    <hr>
+
+    <h2>🌟 Star, Fork, & Share</h2>
+    <p>If you found this helpful — ⭐ <strong>Star it</strong>, 🍴 <strong>Fork it</strong>, and 💬 <strong>Share it</strong> with your dev friends!</p>
   </div>
 
-  <hr>
-  
-  <h2>🤝 Contribution Guidelines</h2>
-  <ol>
-    <li>Fork this repo</li>
-    <li>Create a new branch</li>
-    <li>Add or improve content</li>
-    <li>Submit a pull request</li>
-  </ol>
-  <p>💡 Pro Tip: Use screenshots, examples, or GIFs to make it even better!</p>
-  
-  <hr>
-  
-  <h2>📜 License</h2>
-  <p>This project is licensed under the <a href="LICENSE">MIT License</a>.</p>
+  <footer>
+    &copy; 2025 Mahesh Shukla | Built with ❤️ for the dev community
+  </footer>
 
-  <hr>
-
-  <h2>🌟 Star, Fork, & Share</h2>
-  <p>If you found this helpful — ⭐ <strong>Star it</strong>, 🍴 <strong>Fork it</strong>, and 💬 <strong>Share it</strong> with your dev friends!</p>
-
-  <hr>
-
-  <h2>💬 Join the Community</h2>
-  <p><a href="https://www.linkedin.com/in/mahesh-shukla">Connect on LinkedIn: Mahesh Shukla</a></p>
-</div>
-
-<footer>
-  &copy; 2025 Mahesh Shukla | Built with ❤️ for the dev community
-</footer>
-
-<script>
-  // Simulated Git command outputs
-  const commandOutputs = {
-    gitBasicsDemo: `Initialized empty Git repository in /path/to/repo/.git/
+  <script>
+    // Simulated Git command outputs
+    const commandOutputs = {
+      gitBasicsDemo: `Initialized empty Git repository in /path/to/repo/.git/
 On branch main
 No commits yet
 Untracked files:
@@ -416,63 +626,114 @@ Changes to be committed:
 [main (root-commit) abc1234] Initial commit
  1 file changed, 10 insertions(+)
  create mode 100644 index.html`,
-    branchingDemo: `Switched to branch 'feature-branch'
+      branchingDemo: `Switched to branch 'feature-branch'
 [feature-branch abc1235] Add feature
  1 file changed, 5 insertions(+)
 Switched to branch 'main'
 Merge made by the 'recursive' strategy.
  1 file changed, 5 insertions(+)`,
-    remoteDemo: `Branch 'main' set up to track remote branch 'main' from 'origin'.
-To https://github.com/MaheshShukla1/GitHub-Guru.git
+      remoteDemo: `Branch 'main' set up to track remote branch 'main' from 'origin'.
+To https://github.com/MaheshShukla1/github-guru.git
  * [new branch]      main -> main`,
-    prDemo: `Cloning into 'GitHub-Guru'...
+      prDemo: `Cloning into 'github-guru'...
 Switched to a new branch 'my-feature'
 [my-feature abc1236] Add my feature
  1 file changed, 3 insertions(+)
-To https://github.com/your-username/GitHub-Guru.git
+To https://github.com/your-username/github-guru.git
  * [new branch]      my-feature -> my-feature
 # Follow GitHub UI to create a pull request`,
-    advancedDemo: `Saved working directory and index state WIP on main: abc1234 Initial commit
+      advancedDemo: `Saved working directory and index state WIP on main: abc1234 Initial commit
 stash@{0}: WIP on main: abc1234 Initial commit
 Dropped refs/stash@{0}`
-  };
+    };
 
-  // Run demo function
-  function runDemo(textareaId, outputId) {
-    const output = document.getElementById(outputId);
-    output.textContent = commandOutputs[textareaId] || 'No output available for this demo.';
-  }
-
-  // Initialize CodeMirror
-  function initializeCodeMirror() {
-    if (typeof CodeMirror === 'undefined') {
-      console.error('CodeMirror failed to load from both CDNs. Please check your network connection.');
-      document.querySelectorAll('.code-demo').forEach(demo => {
-        const errorDiv = demo.querySelector('.code-error');
-        if (errorDiv) errorDiv.style.display = 'block';
-      });
-      return;
+    // Run demo function
+    function runDemo(textareaId, outputId) {
+      const output = document.getElementById(outputId);
+      output.textContent = commandOutputs[textareaId] || 'No output available for this demo.';
     }
 
-    // Initialize CodeMirror for each textarea
-    document.querySelectorAll('.code-demo textarea').forEach(textarea => {
-      CodeMirror.fromTextArea(textarea, {
-        mode: 'shell',
-        theme: 'default',
-        lineNumbers: true,
-        readOnly: false
+    // Initialize CodeMirror
+    function initializeCodeMirror() {
+      if (typeof CodeMirror === 'undefined') {
+        console.error('CodeMirror failed to load from both CDNs. Please check your network connection.');
+        document.querySelectorAll('.code-demo').forEach(demo => {
+          const errorDiv = demo.querySelector('.code-error');
+          if (errorDiv) errorDiv.style.display = 'block';
+        });
+        return;
+      }
+
+      // Initialize CodeMirror for each textarea
+      document.querySelectorAll('.code-demo textarea').forEach(textarea => {
+        CodeMirror.fromTextArea(textarea, {
+          mode: 'shell',
+          theme: 'default',
+          lineNumbers: true,
+          readOnly: false
+        });
       });
+    }
+
+    // Dark Mode Toggle
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark);
+      document.querySelector('.dark-mode-toggle').innerHTML = isDark ? '<i class="fas fa-sun"></i> Light Mode' : '<i class="fas fa-moon"></i> Dark Mode';
+    }
+
+    // Back to Top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Show/Hide Back to Top Button
+    window.addEventListener('scroll', function() {
+      const backToTop = document.querySelector('.back-to-top');
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
-  }
 
-  // Initialize after DOM is loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    if (window.CodeMirror) {
-      initializeCodeMirror();
+    // Progress Tracker
+    function updateProgress() {
+      const checkboxes = document.querySelectorAll('.progress-checkbox');
+      const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+      const total = checkboxes.length;
+      const percentage = (checkedCount / total) * 100;
+      document.querySelector('.progress-bar-fill').style.width = `${percentage}%`;
+      localStorage.setItem('progress', JSON.stringify(Array.from(checkboxes).map(cb => ({
+        section: cb.dataset.section,
+        checked: cb.checked
+      }))));
     }
-    // Fallback handling is managed in window.load event
-  });
-</script>
 
+    // Initialize after DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize CodeMirror
+      if (window.CodeMirror) {
+        initializeCodeMirror();
+      }
+
+      // Preloader
+      setTimeout(() => {
+        document.querySelector('.preloader').classList.add('hidden');
+      }, 1000);
+
+      // Dark Mode
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+        document.querySelector('.dark-mode-toggle').innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+      }
+
+      // Progress Tracker
+      const savedProgress = JSON.parse(localStorage.getItem('progress') || '[]');
+      document.querySelectorAll('.progress-checkbox').forEach(cb => {
+        const saved = savedProgress.find(p => p.section === cb.dataset.section);
+        if (saved) cb.checked = saved.checked;
+        cb.addEventListener('change', updateProgress);
+      });
+      updateProgress();
+    });
+  </script>
 </body>
 </html>
