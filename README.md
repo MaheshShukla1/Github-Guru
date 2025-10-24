@@ -1,13 +1,20 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png" alt="GitHub-Guru Banner" width="100%">
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/MaheshShukla1/GitHub-Guru/main/assets/github-guru-banner.png" width="100%" alt="GitHub Guru Banner">
+
+<h1>🚀 <span style="color:#f05033;">Git Guru</span> — Master Git & GitHub from Scratch 🧠💻</h1>
+
+<p>
+  <b>Hands-On Git & GitHub Learning Repository</b><br>
+  <i>Learn version control visually, practically, and step-by-step — from basics to pro level!</i>
 </p>
 
-<h1 align="center">🚀 GitHub-Guru — Learn Git & GitHub from Scratch to Advanced 🧠💻</h1>
+<a href="https://maheshshukla1.github.io/Github-Guru/"><img src="https://img.shields.io/badge/View%20Live%20Course-0A66C2?style=for-the-badge&logo=github&logoColor=white"></a>
+<a href="https://github.com/MaheshShukla1/Github-Guru/stargazers"><img src="https://img.shields.io/github/stars/MaheshShukla1/Github-Guru?style=for-the-badge&color=yellow"></a>
+<a href="https://github.com/MaheshShukla1/Github-Guru/network/members"><img src="https://img.shields.io/github/forks/MaheshShukla1/Github-Guru?style=for-the-badge&color=orange"></a>
 
-<p align="center">
-  <b>Hands-on Git & GitHub Learning Repository</b><br>
-  <i>Learn version control like a pro — commit by commit.</i>
-</p>
+</div>
+
 
 ![GitHub license](https://img.shields.io/github/license/MaheshShukla1/GitHub-Guru)
 ![GitHub stars](https://img.shields.io/github/stars/MaheshShukla1/GitHub-Guru?style=social)
