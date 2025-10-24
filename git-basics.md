@@ -19,6 +19,7 @@ Before you can Git things done — you need Git installed! 😎
 2. Download and run the setup.  
 3. Accept all defaults (don’t overthink).  
 4. Open **Git Bash** and run:
+
    ```bash
    git --version
    ```
@@ -56,6 +57,7 @@ git --version
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
+
 This makes every commit traceable — your personal developer fingerprint. 🔍
 
 ## 🚀 2. `git init` — Create a New Repository
