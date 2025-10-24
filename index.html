@@ -32,7 +32,7 @@
   <!-- Styles -->
   <style>
     * {margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif;}
-    body {background:#f9f9f9; color:#222; line-height:1.7; font-size:16px;}
+    body {background: linear-gradient(to bottom, #f9f9f9, #ffffff); color:#222; line-height:1.7; font-size:16px;}
     a {color:#007bff; text-decoration:none; transition: color 0.3s;}
     a:hover {color:#0056b3; text-decoration:underline;}
     .container {max-width:1100px; margin:50px auto; padding:0 20px;}
@@ -41,7 +41,8 @@
     h2 {font-size:2rem; margin:3rem 0 1.5rem; color:#333; font-weight:600; position:relative;}
     h2::after {content:''; display:block; width:50px; height:3px; background:#f05033; margin:0.5rem auto 0;}
     p {margin-bottom:1.5rem; font-weight:300;}
-    img {max-width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+    img {max-width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;}
+    img:hover {transform: scale(1.02);}
     .badge {display:inline-block; margin:8px 8px 20px 0;}
     table {width:100%; border-collapse:collapse; margin:2.5rem 0; box-shadow:0 2px 8px rgba(0,0,0,0.05);}
     th, td {border:1px solid #e0e0e0; padding:15px; text-align:left;}
@@ -55,10 +56,32 @@
     li {margin-bottom:0.75rem;}
     .hero {background:#fff; padding:40px 20px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); margin-bottom:40px;}
     .social-share {margin:2rem 0;}
-    .social-share a {margin:0 10px; font-size:1.5rem; color:#555;}
+    .social-share a {margin:0 10px; font-size:1.5rem; color:#555; transition: color 0.3s;}
     .social-share a:hover {color:#f05033;}
     .feature-icon {font-size:1.2rem; color:#f05033; margin-right:0.5rem;}
-    .learning-path tr:hover {background:#f8f9fa;}
+    .learning-path tr:hover {background:#f8f9fa; transition: background 0.2s;}
+    .topic-card {background:#fff; padding:20px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.05); margin-bottom:20px; transition: box-shadow 0.3s;}
+    .topic-card:hover {box-shadow:0 6px 15px rgba(0,0,0,0.1);}
+    .topic-card h3 {font-size:1.5rem; color:#f05033; margin-bottom:0.5rem;}
+    .topic-card p {font-size:0.95rem; color:#666;}
+    footer {text-align:center; padding:20px; background:#fff; border-top:1px solid #eee; margin-top:40px; font-size:0.9rem; color:#777;}
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {max-width:100%; padding:0 15px;}
+      h1 {font-size:2.2rem;}
+      h2 {font-size:1.6rem;}
+      .btn {padding:10px 20px; font-size:0.9rem;}
+      .hero {padding:30px 15px;}
+      table {font-size:0.85rem;}
+      .social-share a {font-size:1.2rem; margin:0 8px;}
+      .topic-card {padding:15px;}
+    }
+    @media (max-width: 480px) {
+      h1 {font-size:1.8rem;}
+      .btn {display:block; margin:10px auto; width:80%;}
+      img {border-radius:8px;}
+    }
   </style>
 </head>
 <body>
@@ -151,43 +174,36 @@ cd GitHub-Guru
   <hr>
   
   <h2>🗂️ Learning Path</h2>
-  <table class="learning-path">
-    <tr>
-      <th>Level</th>
-      <th>Topic</th>
-      <th>Explore</th>
-    </tr>
-    <tr>
-      <td>01</td>
-      <td>🧭 Introduction to Git</td>
-      <td><a href="./what-is-git.md">Start Here</a></td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td>⚙️ Git Basics</td>
-      <td><a href="./git-basics.md">Explore →</a></td>
-    </tr>
-    <tr>
-      <td>03</td>
-      <td>🌿 Branching & Merging</td>
-      <td><a href="./branching-and-merging.md">Explore →</a></td>
-    </tr>
-    <tr>
-      <td>04</td>
-      <td>☁️ Remote Repositories (GitHub)</td>
-      <td><a href="./github-remotes.md">Explore →</a></td>
-    </tr>
-    <tr>
-      <td>05</td>
-      <td>🔄 Collaboration & Pull Requests</td>
-      <td><a href="./pull-requests.md">Explore →</a></td>
-    </tr>
-    <tr>
-      <td>06</td>
-      <td>🧰 Advanced Git</td>
-      <td><a href="./advanced-git.md">Explore →</a></td>
-    </tr>
-  </table>
+  <div class="topic-card">
+    <h3>01: 🧭 Introduction to Git</h3>
+    <p>Discover what Git is, the fundamentals of version control, and why it's essential for modern development. Includes real-world analogies and basic concepts to get you started.</p>
+    <a class="btn" href="./what-is-git.md">Start Here</a>
+  </div>
+  <div class="topic-card">
+    <h3>02: ⚙️ Git Basics</h3>
+    <p>Learn essential commands like init, add, commit, status, and log. Hands-on examples to create and manage your first repository locally.</p>
+    <a class="btn" href="./git-basics.md">Explore →</a>
+  </div>
+  <div class="topic-card">
+    <h3>03: 🌿 Branching & Merging</h3>
+    <p>Master branching for parallel development, merging changes, and resolving conflicts. Practical scenarios and best practices included.</p>
+    <a class="btn" href="./branching-and-merging.md">Explore →</a>
+  </div>
+  <div class="topic-card">
+    <h3>04: ☁️ Remote Repositories (GitHub)</h3>
+    <p>Connect your local repo to GitHub, learn push/pull, and manage remotes. Tips for secure collaboration and repo management.</p>
+    <a class="btn" href="./github-remotes.md">Explore →</a>
+  </div>
+  <div class="topic-card">
+    <h3>05: 🔄 Collaboration & Pull Requests</h3>
+    <p>Understand pull requests, forking, and open-source workflows. Step-by-step guide to contributing to projects.</p>
+    <a class="btn" href="./pull-requests.md">Explore →</a>
+  </div>
+  <div class="topic-card">
+    <h3>06: 🧰 Advanced Git</h3>
+    <p>Dive into rebase, stash, reset, and revert. Advanced techniques for clean histories and error recovery, with examples.</p>
+    <a class="btn" href="./advanced-git.md">Explore →</a>
+  </div>
 
   <hr>
   
@@ -210,6 +226,10 @@ cd GitHub-Guru
   <h2>🌟 Star, Fork, & Share</h2>
   <p>If you found this helpful — ⭐ <strong>Star it</strong>, 🍴 <strong>Fork it</strong>, and 💬 <strong>Share it</strong> with your dev friends!</p>
 </div>
+
+<footer>
+  &copy; 2025 Mahesh Shukla | Built with ❤️ for the dev community
+</footer>
 
 </body>
 </html>
