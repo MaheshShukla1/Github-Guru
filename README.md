@@ -72,14 +72,19 @@ Open in VS Code or any editor and start exploring! ✨
 
 ## 🗂️ Topics Covered
 
-|Section|Topic|Link|
-|---|---|---|
-|01|🧭 Introduction|[Go →](https://github.com/MaheshShukla1/Github-Guru/blob/main/what-is-git.md)|
-|02|🪄 Git Basics|[Go →](https://github.com/MaheshShukla1/Github-Guru/blob/main/git-basics.md)|
-|03|🌿 Branching & Merging|[Go →](https://github.com/MaheshShukla1/Github-Guru/blob/main/branching-and-merging.md)|
-|04|☁️ Remote Repos (GitHub)|[Go →](https://github.com/MaheshShukla1/Github-Guru/blob/main/github-remotes.md)|
-|05|🧰 Advanced Git|[Go →](05-Advanced-Git/)|
 
+| 📘 Section | 🌟 Topic | 🔗 Resource |
+|:--:|:--|:--:|
+| 01 | 🧭 **Introduction to Git** | [📄 Explore →](https://github.com/MaheshShukla1/Github-Guru/blob/main/what-is-git.md) |
+| 02 | 🪄 **Git Basics** | [📄 Explore →](https://github.com/MaheshShukla1/Github-Guru/blob/main/git-basics.md) |
+| 03 | 🌿 **Branching & Merging** | [📄 Explore →](https://github.com/MaheshShukla1/Github-Guru/blob/main/branching-and-merging.md) |
+| 04 | ☁️ **Remote Repositories (GitHub)** | [📄 Explore →](https://github.com/MaheshShukla1/Github-Guru/blob/main/github-remotes.md) |
+| 05 | 🔄 **Collaboration & Pull Requests** | [📄 Explore →](https://github.com/MaheshShukla1/Github-Guru/blob/main/pull-requests.md) |
+| 06 | 🧠 **Advanced Git (Rebase, Stash, Reset, Revert)** | 🔜 *Coming Soon...* |
+
+---
+
+💡 **Pro Tip:** Bookmark this roadmap — it’s your **step-by-step Git mastery path**, from basics to advanced dev workflows.
 
 ## 🧱 Tech Stack / Tools Used
 
