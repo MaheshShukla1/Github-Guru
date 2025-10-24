@@ -141,5 +141,5 @@ If you found this helpful —
 
 
 <!--
-SEO Keywords: git tutorial, learn git and github, git commands for beginners, git cheatsheet, git version control explained, github projects, open source learning, devops git basics, software development versioning
+SEO Keywords: git tutorial, learn git and github, git commands for beginners, git cheatsheet, git version control explained, github projects, open source learning, devops git basics, software development versioning, git workflow tutorial, git branching tutorial, git merge conflicts, git rebase tutorial, git stash commands, git reset vs revert, pull request guide, github collaboration, git commit history, version control system tutorial, beginner git guide, git for students, git for developers, git project ideas, git hands-on practice
 -->
